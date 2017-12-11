@@ -15,6 +15,7 @@ ConditionPathExists=/etc/waagent.conf
 
 [Service]
 Type=simple
+Environment="RANDFILE=/root/.rnd"
 ExecStart=/usr/bin/python3 -u /usr/sbin/waagent -daemon
 Restart=always
 
