@@ -1,6 +1,22 @@
-walinuxagent (2.2.17-0ubuntu1~16.04.1) xenial; urgency=medium
+walinuxagent (2.2.21+really2.2.20-0ubuntu1~16.04.1) xenial; urgency=medium
 
-  * Backport artful version to xenial.
+  * Backport bionic version to xenial.
+  * Revert to an older upstream release: 2.2.20 (LP: #1749589).
+    - Rename upstream tarball to 2.2.21+really2.2.20 to end up with a
+      temporarily higher version number than what's in the archive.
+  * debian/patches/disable_import_test.patch: refreshed patch.
+
+ -- Łukasz 'sil2100' Zemczak <lukasz.zemczak@ubuntu.com>  Thu, 15 Feb 2018 14:28:59 +0100
+
+walinuxagent (2.2.21-0ubuntu1) bionic; urgency=medium
+
+  * New upstream release (LP: #1746628).
+  * debian/patches/disable_import_test.patch: refreshed patch.
+
+ -- Łukasz 'sil2100' Zemczak <lukasz.zemczak@ubuntu.com>  Mon, 05 Feb 2018 17:25:14 +0100
+
+walinuxagent (2.2.17-0ubuntu1) artful; urgency=medium
+
   * New upstream release (LP: #1717306).
 
  -- Łukasz 'sil2100' Zemczak <lukasz.zemczak@ubuntu.com>  Fri, 15 Sep 2017 12:42:50 +0200

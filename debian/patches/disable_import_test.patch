@@ -1,5 +1,7 @@
---- a/config/waagent.conf
-+++ b/config/waagent.conf
+Index: walinuxagent-2.2.21+really2.2.20/config/waagent.conf
+===================================================================
+--- walinuxagent-2.2.21+really2.2.20.orig/config/waagent.conf
++++ walinuxagent-2.2.21+really2.2.20/config/waagent.conf
 @@ -3,16 +3,16 @@
  #
  
@@ -20,7 +22,7 @@
  
  # Supported values are "rsa", "dsa", "ecdsa", "ed25519", and "auto".
  Provisioning.SshHostKeyPairType=rsa
-@@ -36,14 +36,14 @@
+@@ -36,14 +36,14 @@ Provisioning.ExecuteCustomData=n
  Provisioning.AllowResetSysUser=n
  
  # Format if unformatted. If 'n', resource disk will not be mounted.
