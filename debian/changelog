@@ -1,3 +1,9 @@
+walinuxagent (2.2.21+really2.2.20-0ubuntu1~16.04.1bb1) xenial; urgency=medium
+
+  * Balabit patched version
+
+ -- Balabit Platform Team <devnull@dev.null>  Wed, 21 Feb 2018 14:45:04 +0100
+
 walinuxagent (2.2.21+really2.2.20-0ubuntu1~16.04.1) xenial; urgency=medium
 
   * Backport bionic version to xenial.
