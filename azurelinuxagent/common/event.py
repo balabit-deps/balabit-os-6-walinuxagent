@@ -44,22 +44,30 @@ _EVENT_MSG = "Event: name={0}, op={1}, message={2}, duration={3}"
 
 class WALAEventOperation:
     ActivateResourceDisk = "ActivateResourceDisk"
+    AgentBlacklisted = "AgentBlacklisted"
+    AgentEnabled = "AgentEnabled"
     AutoUpdate = "AutoUpdate"
+    CustomData = "CustomData"
+    Deploy = "Deploy"
     Disable = "Disable"
     Download = "Download"
     Enable = "Enable"
+    ExtensionProcessing = "ExtensionProcessing"
     Firewall = "Firewall"
     HealthCheck = "HealthCheck"
     HeartBeat = "HeartBeat"
     HostPlugin = "HostPlugin"
+    HttpErrors = "HttpErrors"
     Install = "Install"
     InitializeHostPlugin = "InitializeHostPlugin"
+    Partition = "Partition"
     ProcessGoalState = "ProcessGoalState"
     Provision = "Provision"
     ReportStatus = "ReportStatus"
     Restart = "Restart"
     UnhandledError = "UnhandledError"
     UnInstall = "UnInstall"
+    Unknown = "Unknown"
     Upgrade = "Upgrade"
     Update = "Update"
 
@@ -171,7 +179,7 @@ class EventLogger(object):
             (self.periodic_events[h] + delta) <= datetime.now()
 
     def add_periodic(self,
-        delta, name, op="", is_success=True, duration=0,
+        delta, name, op=WALAEventOperation.Unknown, is_success=True, duration=0,
         version=CURRENT_VERSION, message="", evt_type="",
         is_internal=False, log_event=True, force=False):
 
@@ -186,7 +194,7 @@ class EventLogger(object):
 
     def add_event(self,
                   name,
-                  op="",
+                  op=WALAEventOperation.Unknown,
                   is_success=True,
                   duration=0,
                   version=CURRENT_VERSION,
@@ -240,7 +248,8 @@ def report_periodic(delta, op, is_success=True, message=''):
               message=message,
               op=op)
 
-def add_event(name, op="", is_success=True, duration=0, version=CURRENT_VERSION,
+def add_event(name, op=WALAEventOperation.Unknown, is_success=True, duration=0,
+              version=CURRENT_VERSION,
               message="", evt_type="", is_internal=False, log_event=True,
               reporter=__event_logger__):
     if reporter.event_dir is None:
@@ -256,7 +265,8 @@ def add_event(name, op="", is_success=True, duration=0, version=CURRENT_VERSION,
             is_internal=is_internal, log_event=log_event)
 
 def add_periodic(
-    delta, name, op="", is_success=True, duration=0, version=CURRENT_VERSION,
+    delta, name, op=WALAEventOperation.Unknown, is_success=True, duration=0,
+    version=CURRENT_VERSION,
     message="", evt_type="", is_internal=False, log_event=True, force=False,
     reporter=__event_logger__):
     if reporter.event_dir is None:
