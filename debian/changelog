@@ -1,12 +1,39 @@
+walinuxagent (2.2.32-0ubuntu1~16.04.1) xenial; urgency=medium
+
+  * Backport of the disco version.
+  * New upstream release (LP: #1799498).
+  * debian/patches/disable_import_test.patch: refreshed patch.
+  * debian/control:
+    - Add the python3-mock build-dependency.
+  * debian/rules:
+    - Run unit tests but don't fail the build if they fail. Previously, due to
+      a bug in setup.py, those were never being run during build so the
+      failures are not regressions.
+
+ -- Łukasz 'sil2100' Zemczak <lukasz.zemczak@ubuntu.com>  Mon, 29 Oct 2018 09:13:23 +0100
+
+walinuxagent (2.2.21+really2.2.20-0ubuntu3) bionic; urgency=medium
+
+  * Drop Recommends of linux-image-extra-virtual, as that depends on a kernel
+    other than linux-azure.
+
+ -- Daniel Watkins <daniel.watkins@canonical.com>  Tue, 20 Mar 2018 18:11:57 -0400
+
+walinuxagent (2.2.21+really2.2.20-0ubuntu2) bionic; urgency=medium
+
+  * Do not provide config to cloud-init specifying datasource_list.
+    (LP: #1700769)
+
+ -- Scott Moser <smoser@ubuntu.com>  Fri, 23 Feb 2018 13:17:20 -0500
+
 walinuxagent (2.2.21+really2.2.20-0ubuntu1~16.04.1bb1) xenial; urgency=medium
 
   * Balabit patched version
 
  -- Balabit Platform Team <devnull@dev.null>  Wed, 21 Feb 2018 14:45:04 +0100
 
-walinuxagent (2.2.21+really2.2.20-0ubuntu1~16.04.1) xenial; urgency=medium
+walinuxagent (2.2.21+really2.2.20-0ubuntu1) bionic; urgency=medium
 
-  * Backport bionic version to xenial.
   * Revert to an older upstream release: 2.2.20 (LP: #1749589).
     - Rename upstream tarball to 2.2.21+really2.2.20 to end up with a
       temporarily higher version number than what's in the archive.

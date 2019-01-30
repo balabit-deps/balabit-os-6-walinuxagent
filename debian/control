@@ -8,6 +8,7 @@ Build-Depends: debhelper (>= 8),
                python3-all,
                python3-setuptools,
                python3-pyasn1,
+               python3-mock,
                openssl (>= 1.0),
 Standards-Version: 3.9.8
 X-Python3-Version: >= 3.2
@@ -22,8 +23,7 @@ Depends: isc-dhcp-client,
          util-linux (>= 2.0),
          ${misc:Depends},
          ${python3:Depends},
-Recommends: linux-image-extra-virtual,
-            cloud-init (>= 0.7.3~bzr826-0ubuntu2)
+Recommends: cloud-init (>= 0.7.3~bzr826-0ubuntu2)
 Description: Windows Azure Linux Agent
  The Windows Azure Linux Agent supports the provisioning and running of Linux
  VMs in the Windows Azure cloud. This package should be installed on Linux
