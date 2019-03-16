@@ -1,3 +1,9 @@
+walinuxagent (2.2.32-0ubuntu1~16.04.2bb1) xenial; urgency=medium
+
+  * Balabit patched version
+
+ -- Balabit Platform Team <devnull@dev.null>  Sat, 16 Mar 2019 04:24:50 +0100
+
 walinuxagent (2.2.32-0ubuntu1~16.04.2) xenial-security; urgency=medium
  
   * debian/patches/CVE-2019-0804.patch:
